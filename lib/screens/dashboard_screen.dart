@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:traintracker/utils/reuseable_widgets.dart';
 import 'package:traintracker/utils/constants.dart';
 import 'package:flutter/material.dart';
+import 'train_schedule.dart';
 
 class DashBoard extends StatefulWidget {
   @override
@@ -77,7 +78,11 @@ class _DashBoardState extends State<DashBoard> {
                   children: <Widget>[
                     Expanded(
                       child: MenuCard(
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.push(context, MaterialPageRoute(
+                              builder: (BuildContext context) => TrainSchedule()
+                          ));
+                        },
                         icon: Icons.dashboard,
                         iconColor: Colors.red,
                         menuName: 'Train Schedule',
