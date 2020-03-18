@@ -19,6 +19,17 @@ class _DashBoardState extends State<DashBoard> {
                 'Train Tracker'
             ),
         ),
+        actions: <Widget>[
+          GestureDetector(
+            onTap: (){},
+            child: Container(
+              margin: EdgeInsets.symmetric(horizontal: 16),
+              child: Icon(
+                Icons.exit_to_app,
+              ),
+            ),
+          )
+        ],
       ),
       drawer: Drawer(
         child: ListView(
@@ -146,46 +157,6 @@ class _DashBoardState extends State<DashBoard> {
             ),
           )
         ],
-      ),
-    );
-  }
-}
-
-class MenuCard extends StatelessWidget {
-  MenuCard({@required this.menuName, @required this.icon, @required this.iconColor, @required this.onTap});
-
-  final IconData icon;
-  final Color iconColor;
-  final String menuName;
-  final Function onTap;
-
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onTap,
-      child: Card(
-        elevation: 4,
-        child: Container(
-          margin: EdgeInsets.all(16),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              Icon(
-                icon,
-                color: iconColor,
-              ),
-              SizedBox(
-                height: 50,
-              ),
-              Text(
-                '$menuName',
-                style: TextStyle(
-                    fontSize: 18
-                ),
-              )
-            ],
-          ),
-        ),
       ),
     );
   }

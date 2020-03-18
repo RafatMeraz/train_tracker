@@ -40,3 +40,42 @@ class RoundedCornerButton extends StatelessWidget {
   }
 }
 
+class MenuCard extends StatelessWidget {
+  MenuCard({@required this.menuName, @required this.icon, @required this.iconColor, @required this.onTap});
+
+  final IconData icon;
+  final Color iconColor;
+  final String menuName;
+  final Function onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Card(
+        elevation: 4,
+        child: Container(
+          margin: EdgeInsets.all(16),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              Icon(
+                icon,
+                color: iconColor,
+              ),
+              SizedBox(
+                height: 50,
+              ),
+              Text(
+                '$menuName',
+                style: TextStyle(
+                    fontSize: 18
+                ),
+              )
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
