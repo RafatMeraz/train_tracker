@@ -73,6 +73,9 @@ class _LoginState extends State<Login> {
                 textColor: Colors.white,
                 borderColor: Colors.white,
                 onPress: () async{
+                  setState(() {
+                    isEnable = true;
+                  });
                   try{
                     var _user = await _firebaseAuth.signInWithEmailAndPassword(
                         email: _emailController.text.trim(),
