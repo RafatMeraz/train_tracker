@@ -1,4 +1,6 @@
 import 'package:flutter/cupertino.dart';
+import 'package:traintracker/screens/seat_available.dart';
+import 'package:traintracker/screens/track_train.dart';
 import 'package:traintracker/utils/reuseable_widgets.dart';
 import 'package:traintracker/utils/constants.dart';
 import 'package:flutter/material.dart';
@@ -108,7 +110,11 @@ class _DashBoardState extends State<DashBoard> {
                   children: <Widget>[
                     Expanded(
                       child: MenuCard(
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.push(context, MaterialPageRoute(
+                              builder: (BuildContext context) => SeatAvailable()
+                          ));
+                        },
                         icon: Icons.airline_seat_recline_extra,
                         iconColor: Color(0xFF4A0000),
                         menuName: 'Seat Available',
@@ -140,7 +146,11 @@ class _DashBoardState extends State<DashBoard> {
                     ),
                     Expanded(
                       child: MenuCard(
-                        onTap: (){},
+                        onTap: (){
+                          Navigator.push(context, MaterialPageRoute(
+                              builder: (BuildContext context) => TrackTrain()
+                          ));
+                        },
                         icon: Icons.location_searching,
                         iconColor: Color(0xFF1234BC),
                         menuName: 'Track Train',
