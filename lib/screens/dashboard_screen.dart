@@ -5,6 +5,7 @@ import 'package:traintracker/utils/reuseable_widgets.dart';
 import 'package:traintracker/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'train_schedule.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import '../screens/ticket_price.dart';
 import '../screens/station_map.dart';
 
@@ -14,6 +15,8 @@ class DashBoard extends StatefulWidget {
 }
 
 class _DashBoardState extends State<DashBoard> {
+  FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,7 +29,10 @@ class _DashBoardState extends State<DashBoard> {
         ),
         actions: <Widget>[
           GestureDetector(
-            onTap: (){},
+            onTap: (){
+              _firebaseAuth.signOut();
+              Navigator.pop(context);
+            },
             child: Container(
               margin: EdgeInsets.symmetric(horizontal: 16),
               child: Icon(
