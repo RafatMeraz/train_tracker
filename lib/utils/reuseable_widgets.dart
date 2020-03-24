@@ -79,3 +79,91 @@ class MenuCard extends StatelessWidget {
     );
   }
 }
+
+class TrainCard extends StatelessWidget {
+  TrainCard({@required this.trainName, @required this.offDay, @required this.onTap});
+
+  final String trainName;
+  final String offDay;
+  final Function onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Card(
+        elevation: 4,
+        child: ListTile(
+          leading: Icon(
+              Icons.train
+          ),
+          title: Text(
+              '$trainName'
+          ),
+          subtitle: RichText(
+            text: TextSpan(
+                text: 'Off day : ',
+                style: TextStyle(
+                    color: Colors.grey[800]
+                ),
+                children: <TextSpan>[
+                  TextSpan(
+                      text: '$offDay'
+                  )
+                ]
+            ),
+          ),
+          trailing: Icon(
+              Icons.arrow_forward_ios
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class TrainScheduleCard extends StatelessWidget {
+  TrainScheduleCard({@required this.from, @required this.to, @required this.time});
+
+  final String from;
+  final String to;
+  final String time;
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      elevation: 4,
+      child: ListTile(
+        leading: Icon(
+            Icons.train
+        ),
+        title:RichText(
+          text: TextSpan(
+              text: '$from >> ',
+              style: TextStyle(
+                  color: Colors.grey[800]
+              ),
+              children: <TextSpan>[
+                TextSpan(
+                    text: '$to'
+                )
+              ]
+          ),
+        ),
+        subtitle: RichText(
+          text: TextSpan(
+              text: 'Time : ',
+              style: TextStyle(
+                  color: Colors.grey[800]
+              ),
+              children: <TextSpan>[
+                TextSpan(
+                    text: '$time'
+                )
+              ]
+          ),
+        ),
+      ),
+    );
+  }
+}

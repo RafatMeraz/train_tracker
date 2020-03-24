@@ -3,6 +3,7 @@ import 'package:search_app_bar/search_app_bar.dart';
 import 'package:traintracker/utils/reuseable_widgets.dart';
 import 'package:traintracker/utils/constants.dart';
 import 'package:flutter/material.dart';
+import 'single_train_shedule.dart';
 
 class TrainSchedule extends StatefulWidget {
   @override
@@ -22,50 +23,22 @@ class _TrainScheduleState extends State<TrainSchedule> {
           TrainCard(
             trainName: 'Akota Express',
             offDay: 'Sunday',
+            onTap: (){
+              Navigator.push(context, MaterialPageRoute(
+                  builder: (BuildContext context) => SingleTrainSchedule()
+              ));
+            },
           ),
           TrainCard(
             trainName: 'Shundorban Express',
             offDay: 'Thuesday',
+            onTap: (){
+              Navigator.push(context, MaterialPageRoute(
+                  builder: (BuildContext context) => SingleTrainSchedule()
+              ));
+            },
           )
         ],
-      ),
-    );
-  }
-}
-
-class TrainCard extends StatelessWidget {
-  TrainCard({@required this.trainName, @required this.offDay});
-
-  final String trainName;
-  final String offDay;
-
-  @override
-  Widget build(BuildContext context) {
-    return Card(
-      elevation: 4,
-      child: ListTile(
-        leading: Icon(
-          Icons.train
-        ),
-        title: Text(
-          '$trainName'
-        ),
-        subtitle: RichText(
-          text: TextSpan(
-            text: 'Off day : ',
-            style: TextStyle(
-              color: Colors.grey[800]
-            ),
-            children: <TextSpan>[
-              TextSpan(
-                text: '$offDay'
-              )
-            ]
-          ),
-        ),
-        trailing: Icon(
-          Icons.arrow_forward_ios
-        ),
       ),
     );
   }

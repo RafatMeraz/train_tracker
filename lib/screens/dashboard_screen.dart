@@ -3,6 +3,8 @@ import 'package:traintracker/utils/reuseable_widgets.dart';
 import 'package:traintracker/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'train_schedule.dart';
+import '../screens/ticket_price.dart';
+import '../screens/station_map.dart';
 
 class DashBoard extends StatefulWidget {
   @override
@@ -90,7 +92,11 @@ class _DashBoardState extends State<DashBoard> {
                     ),
                     Expanded(
                       child: MenuCard(
-                        onTap: (){},
+                        onTap: (){
+                          Navigator.push(context, MaterialPageRoute(
+                              builder: (BuildContext context) => TicketPrice()
+                          ));
+                        },
                         icon: Icons.label_outline,
                         iconColor: Colors.green[900],
                         menuName: 'Ticket Price',
@@ -110,7 +116,11 @@ class _DashBoardState extends State<DashBoard> {
                     ),
                     Expanded(
                       child: MenuCard(
-                        onTap: (){},
+                        onTap: (){
+                          Navigator.push(context, MaterialPageRoute(
+                              builder: (BuildContext context) => StationMap()
+                          ));
+                        },
                         icon: Icons.location_on,
                         iconColor: Color(0xFF741616),
                         menuName: 'Station Map',
