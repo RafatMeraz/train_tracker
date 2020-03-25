@@ -26,11 +26,17 @@ class _TrainScheduleState extends State<TrainSchedule> {
         builder: (context, snapshot){
           if (snapshot.hasData){
               var trains = snapshot.data.documents;
-              List<Card> allTrains = [];
+              List<GestureDetector> allTrains = [];
               for (var doc in trains){
                 final trainName = doc.data['name'];
                 final offDay = doc.data['offday'];
-                final listTile = Card(
+                final listTile = GestureDetector(
+                    onTap: (){
+                      Navigator.push(context, MaterialPageRoute(
+                          builder: (BuildContext context) => SingleTrainSchedule(trainId: doc.documentID)
+                      ));
+                    },
+                    child: Card(
                   elevation: 3,
                   child: ListTile(
                     leading: Icon(
@@ -42,6 +48,7 @@ class _TrainScheduleState extends State<TrainSchedule> {
                         Icons.traffic
                     ),
                   ),
+                )
                 );
                 allTrains.add(listTile);
               }
