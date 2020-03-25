@@ -8,3 +8,7 @@ This project user the following technologies -
   1. Flutter
   2. Firebase
   3. Google Map
+
+### Important Note
+
+If you clone this, please use your own API key of Google Map.
