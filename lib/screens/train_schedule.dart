@@ -56,7 +56,9 @@ class _TrainScheduleState extends State<TrainSchedule> {
                 children: allTrains,
               );
           }
-          return null;
+          return Center(
+              child: CircularProgressIndicator()
+          );;
         },
       ),
     );

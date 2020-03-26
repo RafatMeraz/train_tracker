@@ -58,7 +58,9 @@ class _SingleTrainScheduleState extends State<SingleTrainSchedule> {
                   children: allRoutines,
                 );
               }
-              return null;
+              return Center(
+                  child: CircularProgressIndicator()
+              );;
             },
           )
     );

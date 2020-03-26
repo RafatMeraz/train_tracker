@@ -49,7 +49,9 @@ class TicketPrice extends StatelessWidget {
               children: allTickets,
             );
           }
-          return null;
+          return Center(
+              child: CircularProgressIndicator()
+          );;
         },
       ),
     );
