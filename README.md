@@ -1,16 +1,14 @@
 # traintracker
 
-A new Flutter application.
+A mobile application for train scheduling and regular tracking. It also so show several information of trains which are helpful for trian traveller.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+This project user the following technologies -
+  1. Flutter
+  2. Firebase
+  3. Google Map
 
-A few resources to get you started if this is your first Flutter project:
+## Important Note
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+If you clone this, please use your own API key of Google Map.
