@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:traintracker/screens/login_screen.dart';
 import 'package:traintracker/screens/seat_available.dart';
 import 'package:traintracker/screens/track_train.dart';
+import 'package:traintracker/screens/track_train_list.dart';
 import 'package:traintracker/utils/reuseable_widgets.dart';
 import 'package:traintracker/utils/constants.dart';
 import 'package:flutter/material.dart';
@@ -155,7 +156,7 @@ class _DashBoardState extends State<DashBoard> {
                       child: MenuCard(
                         onTap: (){
                           Navigator.push(context, MaterialPageRoute(
-                              builder: (BuildContext context) => TrackTrain()
+                              builder: (BuildContext context) => TrackTrainList()
                           ));
                         },
                         icon: Icons.location_searching,
