@@ -1,4 +1,6 @@
 import 'package:flutter/cupertino.dart';
+import 'package:traintracker/screens/about_us.dart';
+import 'package:traintracker/screens/hotlines.dart';
 import 'package:traintracker/screens/login_screen.dart';
 import 'package:traintracker/screens/seat_available.dart';
 import 'package:traintracker/screens/track_train.dart';
@@ -170,7 +172,12 @@ class _DashBoardState extends State<DashBoard> {
                   children: <Widget>[
                     Expanded(
                       child: MenuCard(
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.push(context, MaterialPageRoute(
+                             builder: (BuildContext context) => Hotlines()
+                            )
+                          );
+                        },
                         icon: Icons.phone,
                         iconColor: Color(0xFFF3118A),
                         menuName: 'Hotlines',
@@ -178,7 +185,12 @@ class _DashBoardState extends State<DashBoard> {
                     ),
                     Expanded(
                       child: MenuCard(
-                        onTap: (){},
+                        onTap: (){
+                          Navigator.push(context, MaterialPageRoute(
+                              builder: (BuildContext context) => AboutUs()
+                          )
+                          );
+                        },
                         icon: Icons.info_outline,
                         iconColor: Color(0xFFCCAA00),
                         menuName: 'About Us',
